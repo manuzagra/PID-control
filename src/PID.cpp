@@ -26,8 +26,10 @@ void PID::UpdateError(double cte) {
    * TODO: Update PID errors based on cte.
    */
    d_error = cte - p_error;
-   p_error = cte;
+   if (cte*p_error < 0)
+     i_error = 0;     // zero crossing reset
    i_error += cte;
+   p_error = cte;
 
 }
 
