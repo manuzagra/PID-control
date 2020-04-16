@@ -3,3 +3,4 @@ build
 tags
 .editorconfig
 /papers/
+*.mp4
